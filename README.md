@@ -6,3 +6,4 @@ A collection of components for the ESP-IDF build system targeting the ESP32 SoC.
 
 - TM1637 - This is a component to display numbers on a 4 digit LED display that uses the TM1637 controller chip.
 - SI7021 - Read temperature and humidity from the SI7021 device.
+- MCP23017 - Interface to the 16 I/O GPIO expander. Interrupt capability is not yet implemented.
