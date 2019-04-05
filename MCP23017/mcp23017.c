@@ -28,7 +28,7 @@ uint8_t mcp23017_register(mcp23017_reg_t reg, mcp23017_gpio_t group) {
  * @return an error code or MCP23017_ERR_OK if no error encountered
 */
 mcp23017_err_t mcp23017_init(mcp23017_t *mcp) {
-	ESP_LOGV(TAG,"Beginning to init")
+	ESP_LOGV(TAG,"Beginning to init");
 
 	esp_err_t ret;
 
@@ -148,7 +148,7 @@ mcp23017_err_t mcp23017_set_bit(mcp23017_t *mcp, uint8_t bit, mcp23017_reg_t reg
    current_value |= 1 << bit;
    if( mcp23017_write_register(mcp, reg, group, current_value) != MCP23017_ERR_OK ) {
       uint8_t r = mcp23017_register(reg, group);
-      ESP_LOGE(TAG, "ERROR: unable to write new value %02X to register %02x",current_value, r)
+      ESP_LOGE(TAG, "ERROR: unable to write new value %02X to register %02x",current_value, r);
       return MCP23017_ERR_FAIL;
    }
    return MCP23017_ERR_OK;
@@ -172,7 +172,7 @@ mcp23017_err_t mcp23017_clear_bit(mcp23017_t *mcp, uint8_t bit, mcp23017_reg_t r
    current_value &= ~(1 << bit);
    if( mcp23017_write_register(mcp, reg, group, current_value) != MCP23017_ERR_OK ) {
       uint8_t r = mcp23017_register(reg, group);
-      ESP_LOGE(TAG, "ERROR: unable to write new value %02X to register %02x",current_value, r)
+      ESP_LOGE(TAG, "ERROR: unable to write new value %02X to register %02x",current_value, r);
       return MCP23017_ERR_FAIL;
    }
    return MCP23017_ERR_OK;
